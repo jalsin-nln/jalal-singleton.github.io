@@ -1,17 +1,104 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-      <title>THAT BAG</title>
+      <title>jayspace</title>
+      <style>
+        body {
+            background: black;
+            color: rgb(45, 45, 45);
+            padding: 10px;
+        }
+        #all-contents {
+            max-width: 800px;
+            margin: auto;
+        }
+    
+        /* navigation menu */
+        nav {
+            font-family:Calibri;
+            border:5px solid green;
+            background: purple;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            display: flex;
+            padding: 10px;
+            border-radius:50px;
+        }
+        nav h1 {
+            display: flex;
+            align-items: center;
+            color: white;
+            flex: 1;
+            margin: 0;
+        }
+        nav ul {
+            list-style-image: none;
+        }
+        nav li {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+    
+        /* main container area beneath menu */
+        main {
+            padding:5px;
+            border:6px solid white;
+            background: rgb(245, 238, 219);
+            display: flex;
+        }
+        .sidebar {
+            border: 6px solid green;
+            margin-right: 25px;
+            padding: 5px;
+        }
+        .sidebar img {
+            width: 200px;
+        }
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+        h2, h3 {
+            margin: 0px;
+        }
+    </style>
     </head>
     
     <body>
         <div id="all-contents"> 
             <nav>
-    
+                <h1> Jalal's Website</h1>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">portolio</a>
+                    </li>
+                </ul>
             </nav>
     
             <main>
-    
+                <div class="sidebar">
+                    <img src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-bag-of-money-cartoon-png-image_5407901.jpg">
+                </div>
+            
+                <div class="content">
+                  <h2>jalal singleton</h2>
+                  <p> student at operation sparks</p>
+                  <div class="interests">
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>money</li>
+                        <li>peace</li>
+                        <li>family</li>
+                    </ul>
+                  </div>
+                </div>
             </main>
         </div>
     </body>
