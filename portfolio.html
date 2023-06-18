@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>jayspace</title>
+    <style type="text/css">
+        body {
+            background: black;
+            color: rgb(45, 45, 45);
+            padding: 10px;
+            font-family: arial;
+        }
+
+        header {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        #all-contents {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* navigation menu */
+        nav {
+            font-family: Calibri;
+            border: 5px solid green;
+            background: purple;
+            border-radius: 50px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            display: flex;
+            padding: 10px;
+        }
+
+        nav header {
+            display: flex;
+            align-items: center;
+            color: white;
+            flex: 1;
+        }
+
+        nav ul {
+            align-items:center;
+            display:flex;
+            list-style-image: none;
+        }
+
+        nav li {
+            font-size:15px;
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* main container area beneath menu */
+
+        main {
+            padding: 5px;
+            border: 6px solid green;
+            background: black;
+            display: flex;
+            border-radius: 30px;
+        }
+
+        .content h1 {
+            color: green;
+            border-radius:10px;
+            padding-left:5px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+
+        /* portfolio styles */
+        #portfolio {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #portfolio li {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        #portfolio li:hover {
+            background: #eee;
+        }
+
+        #portfolio a {
+            text-decoration: none;
+            color: #454545;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all-contents">
+        <nav>
+            <header>Jalal's Portfolio</header>
+            <ul>
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="portfolio.html">Portfolio</a>
+                </li>
+            </ul>
+            <main>
+                <div class="content">
+                    <h1>Portfolio Content</h1>
+                    <ul id="portfolio">
+
+                    </ul>
+                </div>
+            </main>
+        </nav>
+    </div>
+</body>
+
+</html>
