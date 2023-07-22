@@ -10,7 +10,7 @@ var _ = {};
 * START OF OUR LIBRARY!
 * Implement each function below its instructions
 */
-
+_.identity = value => value;
 /** _.identity
 * Arguments:
 *   1) Any value
@@ -21,7 +21,25 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
-
+_.typeOf = function (value) {
+    if (Array.isArray(value)) {
+        return 'array';
+    } else if (value === null) {
+        return 'null';
+    } else if (typeof value === 'object') {
+        return 'object';
+    } else if (typeof value === 'string') {
+        return 'string'
+    } else if (typeof value === 'undefined') {
+        return 'undefined';
+    } else if (typeof value === 'number') {
+        return 'number';
+    } else if (typeof value === 'boolean') {
+        return 'boolean';
+    } else if (typeof value === 'function') {
+        return 'function';
+    }
+}
 /** _.typeOf
 * Arguments:
 *   1) Any value
@@ -42,7 +60,24 @@ var _ = {};
 * _.typeOf([1,2,3]) -> "array"
 */
 
+_.first = function (array, number) {
 
+    if (!Array.isArray(array)) {
+        return [];
+    } else if (!number) {
+        return array[0];
+    } else if (number > array.length) {
+        return array;
+    } else {
+        let items = [];
+
+        for (let x = 0; x < number; x++) {
+            items.push(array[x]);
+        }
+        return items;
+    }
+
+}
 /** _.first
 * Arguments:
 *   1) An array
@@ -61,6 +96,21 @@ var _ = {};
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.last = function (array, number) {
+    if (!Array.isArray(array)) {
+        return [];
+    }
+    if (number === undefined || isNaN(number)) {
+        return array[array.length - 1];
+    }
+    if (number < 0) {
+        return [];
+    }
+    if (number > array.length) {
+        return array;
+    }
+    return array.slice(array.length - number);
+}
 
 /** _.last
 * Arguments:
@@ -80,7 +130,14 @@ var _ = {};
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
-
+_.indexOf = function (array, value) {
+    for (let i = 0; i < array.length; i++) {
+        if (value === array[i]) {
+            return i;
+        }
+    }
+    return -1;
+}
 /** _.indexOf
 * Arguments:
 *   1) An array
@@ -97,7 +154,9 @@ var _ = {};
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
-
+_.contains = function (array, value) {
+    return array.includes(value) ? true : false;
+}
 /** _.contains
 * Arguments:
 *   1) An array
@@ -113,6 +172,17 @@ var _ = {};
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.each = function (collection, func) {
+    if (Array.isArray(collection)) {
+        for (var i = 0; i < collection.length; i++) {
+            func(collection[i], i, collection);
+        }
+    } else if (typeof collection === 'object') {
+        for (var key in collection) {
+            func(collection[key], key, collection);
+        }
+    }
+}
 
 /** _.each
 * Arguments:
@@ -130,6 +200,15 @@ var _ = {};
 *      -> should log "a" "b" "c" to the console
 */
 
+_.unique = function (array) {
+    var result = [];
+    for (var i = 0; i < array.length; i++) {
+      if (_.indexOf(result, array[i]) === -1) {
+        result.push(array[i]);
+      }
+    }
+    return result;
+}
 
 /** _.unique
 * Arguments:
@@ -141,7 +220,7 @@ var _ = {};
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-
+_.filter = function(array,function(){}){}
 /** _.filter
 * Arguments:
 *   1) An array

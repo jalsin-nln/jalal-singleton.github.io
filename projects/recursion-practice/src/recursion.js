@@ -52,7 +52,7 @@ var sumBelow = function(n) {
   if(n === 0){
     return n;
   }else if (n < 0){
-    return sumBelow(-n)
+    return n + 1 + sumBelow(n + 1);
   }
 
   return n - 1 + sumBelow(n - 1);
@@ -61,6 +61,17 @@ var sumBelow = function(n) {
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y) {
+  var output = [];
+  if(x >= y - 1){
+    return output;
+  }
+  
+    output = range(x + 1, y);
+    output.unshift(x + 1);
+    
+  
+  
+  return output;
 };
 
 // 7. Compute the exponent of a number.
